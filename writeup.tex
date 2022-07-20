@@ -1,0 +1,68 @@
+% Best practice to include author / contributor information at the top here
+
+% Author:
+% Course: 
+% Date Modified: 
+
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+
+% Also good practice to only include the package calls that actually get used 
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage{enumerate}
+\usepackage{tikz-qtree-compat}
+\usepackage{gb4e}
+\usepackage{latexsym}
+% \usepackage{graphicx}
+
+\setlength{\topmargin}{-.5in}
+
+\begin{document}
+
+\begin{center}
+    \fbox{{\LARGE\bf Spring 2022 \hspace*{0.4cm} CS65 \hspace*{0.4cm} Natural Language Processing}}\\
+    \vspace{0.5cm}
+    {\LARGE\bf Zakir Hossain \& Ibrahim Haussouna \\
+        \vspace{0.25cm}
+        Lab 6}\\[10pt]
+    zhossai2@swarthmore.edu\\
+    ihassou1@swarthmore.edu\\
+    \vspace{0.25cm}
+    \today
+\end{center}
+
+\LARGE\textbf{Answers:}
+
+\begin{enumerate}
+
+    \item We open an email file. Created a message object of the email with the email module. Read each line with the body\_line\_iterator. 
+    Splited the line with whitespace and tokenized the ones that has at least a non-white space character.
+    \item Tokenized each email from the paths. Aggregated all the tokens from all emails into a single array and counted the frequency of this array with Counter. 
+    Iterated over the keys of this frequency dictionary and calculated The
+    the probability for each of the key (which is the unique word). See line 29-41
+
+
+    \item Used the log\_probs function to create dictionar of probabilities for spam and ham emails by passing
+    a list of all the paths of the emails contained in a particular directory. Extracted all the paths via the getPath (line)
+    calculated class probabilities for both ham and spam with the formula. See line 54-67
+
+    \item Tokenized the given email. Got the frequency of the words in the email. And calculated 2 probabilities, one for ham
+    and the other for spam using the probabilities distribution and the formulas. Which ever one was higher, the corresponding clas was returned.
+    See line 88-104
+
+    \item Created a method call most\_indicative that takes the N and the class type.
+     We loop through the types that are common in both probabilities dictionaries and depending on the class type, 
+     we used the corresponding probabilities dictionary and class probability and the indicative formula to rank all 
+     these common words in terms of the indicative value. At the end we returned the words that have the highest indicative value. 
+    
+    \item About 12 hours. 
+    \item Parsing with the email module was a little tricky. Working in log space without any mistake was a
+    little difficult as well.
+
+    \item I liked how accurate the result is, despite being such a simple looking algorithm. P.S: Naive Bayes is not that "Naive" after all. 
+    
+    
+\end{enumerate}
+
+\end{document}
